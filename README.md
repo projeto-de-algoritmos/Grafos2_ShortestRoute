@@ -10,9 +10,11 @@
 
 ## Sobre 
 
-Este é um aplicativo que utiliza o algoritmo de Dijkstra para encontrar a rota mais rápida entre pontos de ônibus. Ele é capaz de calcular a menor distância entre um ponto de partida, um ponto de parada intermediário (opcional) e um ponto de chegada.
+O ShortestRoute é um aplicativo web que utiliza o algoritmo de Dijkstra para encontrar a rota mais rápida entre pontos de ônibus do Gama. Ele é capaz de calcular a menor distância entre um ponto de partida e um ponto de chegada. 
+O objetivo e achar qual linha de onibus chegará mais rápido ao destino.
 
 ##  Como jogar
+
 
 ## Screenshots
 
