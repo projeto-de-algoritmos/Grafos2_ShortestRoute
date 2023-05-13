@@ -51,10 +51,10 @@ if __name__ == "__main__":
     num_vertices = 8
     grafo = Grafo(num_vertices)
 
-    # Adição das arestas e seus pesos
-    grafo.adicionar_aresta(0, 1, 4)
-    grafo.adicionar_aresta(0, 2, 2)
-    grafo.adicionar_aresta(1, 3, 2)
+    # Adição das arestas e seus pesos (em minutos)
+    grafo.adicionar_aresta("Parada UnB", "Parada Faciplac", 25)
+    grafo.adicionar_aresta("Gama Shopping", "Parada UnB", 25)
+    grafo.adicionar_aresta("Parada UnB", "Hospital Maria Auxiliadora" 29)
     grafo.adicionar_aresta(2, 3, 7)
     grafo.adicionar_aresta(2, 4, 3)
     grafo.adicionar_aresta(3, 5, 4)
