@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Shortest Route</title>
+    <style>
+        /* Estilos para o título */
+      h1 {
+              font-family: Arial, sans-serif;
+              font-size: 36px;
+              color: black;
+              font-weight: bold;
+              text-transform: uppercase;
+              margin-top:100px;
+        text-align:left;
+        margin:50;
+          }
+          body {
+        width:100%;
+        height:100%;
+        background-image: url("./fundo.png");
+        background-size: 100%;
+        background-repeat: no-repeat;   
+
+    }
+    </style>
+</head>
+<body>
+
+    <h1>ShortestRoute -  Gama-DF</h1>
+        <label for="seletor">Selecione seu ponto de partida:</label>
+        <select id="seletor" name="origem ">
+            <option value = 1001 >Terminal Gama Sul</option>
+            <option value = 1002>Q 13</option>
+            <option value = 1003>Avenida dos Pioneiros</option>
+            <option value = 1004>Avenida Wagner Piau de Almeida</option>
+            <option value = 1005>Avenida JK</option>
+            <option value = 1006>Retorno - DF-480 (UnB)</option>
+            <option value = 1007>Avenida São Francisco</option>
+            <option value = 1008>Estrada de Acesso Ponte Alta Norte</option>
+            <option value = 1009>Avenida Buritis </option>
+            <option value = 1010 >Rua das Palmeiras</option>
+            <option value = 1011>Via Nucleo Rural Ponte Alta Norte</option>
+            <option value = 1012>EPCT / DF-001 / BR-251</option>
+            <option value = 1013 >DF-480 - Intersecção</option>
+            <option value = 1014>Marginal DF-480 - Retorno</option>
+            <option value = 1015>Retorno - DF-480 (Qd 47 - Setor Leste)) </option>
+            <option value = 1016 >Balão - Avenida Contorno / Via SCLN / DF - 480 </option>
+            <option value = 1017>Avenida Centro Leste - Via SC1 - 1</option>
+            <option value = 1018>Retorno - Avenida Comercial dos Pioneiros</option>
+            <option value = 1019 >Interna - Terminal Gama Sul</option>
+            <option value = 1020>VC - 383</option>
+            <option value = 1021>Rua Santo Expedito </option>
+            <option value = 1022 >Núcleo Rural Ponte Alta - R. 70</option>
+            <option value = 1023>Avenida Roservarte Alves de Sousa</option>
+            <option value = 1024>Balão - Avenida Roservarte Alves de Sousa</option>
+            <option value = 1025>Comércio Central</option>
+            <option value = 1026>Avenida Centro Leste</option>
+            <option value = 1027>Terminal Rodoviário do Gama</option>
+            <option value = 1028 >Terminal BRT Gama</option>
+            <option value = 1029>Interna - Terminal BRT Gama</option>
+            <option value = 1030>Avenida Contorno</option>
+            <option value = 1031>Via SCLN</option>
+        </select><br>
+        <label for="seletor1">Selecione seu ponto de destino:</label>
+        <select id="seletor1" name="destino " style ="margin-top:20px;">
+            <option value = 1001 >Terminal Gama Sul</option>
+            <option value = 1002>Q 13</option>
+            <option value = 1003>Avenida dos Pioneiros</option>
+            <option value = 1004>Avenida Wagner Piau de Almeida</option>
+            <option value = 1005>Avenida JK</option>
+            <option value = 1006>Retorno - DF-480 (UnB)</option>
+            <option value = 1007>Avenida São Francisco</option>
+            <option value = 1008>Estrada de Acesso Ponte Alta Norte</option>
+            <option value = 1009>Avenida Buritis </option>
+            <option value = 1010 >Rua das Palmeiras</option>
+            <option value = 1011>Via Nucleo Rural Ponte Alta Norte</option>
+            <option value = 1012>EPCT / DF-001 / BR-251</option>
+            <option value = 1013 >DF-480 - Intersecção</option>
+            <option value = 1014>Marginal DF-480 - Retorno</option>
+            <option value = 1015>Retorno - DF-480 (Qd 47 - Setor Leste)) </option>
+            <option value = 1016 >Balão - Avenida Contorno / Via SCLN / DF - 480 </option>
+            <option value = 1017>Avenida Centro Leste - Via SC1 - 1</option>
+            <option value = 1018>Retorno - Avenida Comercial dos Pioneiros</option>
+            <option value = 1019 >Interna - Terminal Gama Sul</option>
+            <option value = 1020>VC - 383</option>
+            <option value = 1021>Rua Santo Expedito </option>
+            <option value = 1022 >Núcleo Rural Ponte Alta - R. 70</option>
+            <option value = 1023>Avenida Roservarte Alves de Sousa</option>
+            <option value = 1024>Balão - Avenida Roservarte Alves de Sousa</option>
+            <option value = 1025>Comércio Central</option>
+            <option value = 1026>Avenida Centro Leste</option>
+            <option value = 1027>Terminal Rodoviário do Gama</option>
+            <option value = 1028 >Terminal BRT Gama</option>
+            <option value = 1029>Interna - Terminal BRT Gama</option>
+            <option value = 1030>Avenida Contorno</option>
+            <option value = 1031>Via SCLN</option>
+        </select>
+        <br><br>
+        
+		<button id="start" onclick="start(event);">
+			Buscar
+        </button> 
+        <table>
+            <tr>
+            <th>Cód. Referente</th>
+            <th>Parada</th>
+            <th>Cód. Referente</th>
+            <th>Parada</th>
+            </tr>
+            <tr>
+            <td>1001</td>
+            <td>Terminal Gama Sul</td>
+            <td>1017</td>
+            <td>Avenida Centro Leste - Via SC1 - 1</td>
+            </tr>
+            <tr>
+            <td>1002</td>
+            <td>Q 13</td>
+            <td>1018</td>
+            <td>Retorno - Avenida Comercial dos Pioneiros</td>
+            </tr>
+            <tr>
+            <td>1003</td>
+            <td>Avenida dos Pioneiros</td>
+            <td>1019</td>
+            <td>Interna - Terminal Gama Sul</td>
+            </tr>
+            <tr>
+            <td>1004</td>
+            <td>Avenida Wagner Piau de Almeida</td>
+            <td>1020</td>
+            <td>VC - 383</td>
+            </tr>
+            <tr>
+            <td>1005</td>
+            <td>Avenida JK</td>
+            <td>1021</td>
+            <td>Rua Santo Expedito</td>
+            </tr>
+            <tr>
+            <td>1006</td>
+            <td>Retorno - DF-480 (UnB)</td>
+            <td>1022</td>
+            <td>Núcleo Rural Ponte Alta - R. 70</td>
+            </tr>
+            <tr>
+            <td>1007</td>
+            <td>Avenida São Francisco</td>
+            <td>1023</td>
+            <td>Avenida Roservarte Alves de Sousa</td>
+            </tr>
+            <tr>
+            <td>1008</td>
+            <td>Estrada de Acesso Ponte Alta Norte</td>
+            <td>1024</td>
+            <td>Balão - Avenida Roservarte Alves de Sousa</td>
+            </tr>
+            <tr>
+            <td>1009</td>
+            <td>Avenida Buritis</td>
+            <td>1025</td>
+            <td>Comércio Central</td>
+            </tr>
+            <tr>
+            <td>1010</td>
+            <td>Rua das Palmeiras</td>
+            <td>1026</td>
+            <td>Avenida Centro Leste</td>
+            </tr>
+            <tr>
+            <td>1011</td>
+            <td>Via Nucleo Rural Ponte Alta Norte</td>
+            <td>1027</td>
+            <td>Terminal Rodoviário do Gama</td>
+            </tr>
+            <tr>
+            <td>1012</td>
+            <td>EPCT / DF-001 / BR-251</td>
+            <td>1028</td>
+            <td>Terminal BRT Gama</td>
+            </tr>
+            <tr>
+            <td>1013</td>
+            <td>DF-480 - Intersecção</td>
+            <td>1029</td>
+            <td>Interna - Terminal BRT Gama</td>
+            </tr>
+            <tr>
+            <td>1014</td>
+            <td>Marginal DF-480 - Retorno</td>
+            <td>1030</td>
+            <td>Avenida Contorno</td>
+            </tr>
+            <tr>
+            <td>1015</td>
+            <td>Retorno - DF-480 (Qd 47 - Setor Leste)</td>
+            <td>1031</td>
+            <td>Via SCLN</td>
+            </tr>
+            <tr>
+            <td>1016</td>
+            <td>Balão - Avenida Contorno / Via SCLN / DF - 480</td>
+            </tr>
+          </table>
+          
+    </form>
+</body>
+</tbody>
+</html>
