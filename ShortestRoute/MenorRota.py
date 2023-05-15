@@ -1,6 +1,5 @@
 import sys
 from heapq import heappop, heappush
-from linhas import linhas
 
 class Grafo:
     def __init__(self, vertices):
@@ -14,7 +13,6 @@ class Grafo:
         self.grafo[destino].append((origem, peso))
         self.linhas[(origem, destino)] = linha
         self.linhas[(destino, origem)] = linha
-
 
     def dijkstra(self, origem, destino):
         distancias = [sys.maxsize] * self.vertices
@@ -59,26 +57,55 @@ class Grafo:
 # Exemplo de uso
 if __name__ == "__main__":
     # Criação do grafo
-    num_vertices = 8
+    num_vertices = 2000
     grafo = Grafo(num_vertices)
 
+
     # Adição das arestas e seus pesos (em minutos)
-    # grafo.adicionar_aresta(0, 1, 25, "A")
-    # grafo.adicionar_aresta(2, 0, 25, "B")
-    # grafo.adicionar_aresta(0, 4, 29, "C")
-    # grafo.adicionar_aresta(2, 3, 7, "D")
-    # grafo.adicionar_aresta(2, 4, 3, "E")
-    # grafo.adicionar_aresta(3, 5, 4, "F")
-    # grafo.adicionar_aresta(3, 6, 1, "G")
+    # Ponto de partida/ destino / tempo/ linha de ônibus
+
+    grafo.adicionar_aresta(1001, 1002, 3, "3210")
+    grafo.adicionar_aresta(1002, 1003, 4, "3210")
+    grafo.adicionar_aresta(1003, 1004, 2, "3210")
+    grafo.adicionar_aresta(1004, 1005, 3, "3210")   
+    grafo.adicionar_aresta(1005, 1006, 5, "3210")
+    grafo.adicionar_aresta(1006, 1007, 2, "3210")
+    grafo.adicionar_aresta(1007, 1008, 3, "3210")
+    grafo.adicionar_aresta(1008, 1009, 2, "3210")
+    grafo.adicionar_aresta(1009, 1010, 3, "3210")
+    grafo.adicionar_aresta(1010, 1011, 4, "3210")
+    grafo.adicionar_aresta(1011, 1012, 3, "3210")
+    grafo.adicionar_aresta(1012, 1013, 2, "3210")   
+    grafo.adicionar_aresta(1013, 1014, 1, "3210")
+    grafo.adicionar_aresta(1014, 1015, 3, "3210")
+    grafo.adicionar_aresta(1015, 1016, 4, "3210")
+    grafo.adicionar_aresta(1016, 1017, 2, "3210")
+    grafo.adicionar_aresta(1017, 1018, 1, "3210")
+    grafo.adicionar_aresta(1018, 1019, 2, "3210")
 
 
-    # Adicionar as arestas para a linha_3210
-    for i in range(len(linhas['linha_3210']) - 1):
-        origem = linhas['linha_3210'][i]
-        destino = linhas['linha_3210'][i + 1]
-        peso = linhas['linha_3210'][i + 2]
-        print(origem, destino, peso, "Linha 3210")
-        grafo.adicionar_aresta(origem, destino, peso, "Linha 3210")
+    grafo.adicionar_aresta(1020, 1021, 2, "2063")
+    grafo.adicionar_aresta(1021, 1022, 3, "2063")
+    grafo.adicionar_aresta(1022, 1011, 2, "2063")
+    grafo.adicionar_aresta(1011, 1023, 3, "2063")   
+    grafo.adicionar_aresta(1023, 1024, 3, "2063")
+    grafo.adicionar_aresta(1024, 1004, 1, "2063")
+    grafo.adicionar_aresta(1004, 1025, 2, "2063")
+    grafo.adicionar_aresta(1025, 1017, 3, "2063")
+    grafo.adicionar_aresta(1017, 1027, 2, "2063")
+  
+
+    grafo.adicionar_aresta(1028, 1029, 3, "3204")
+    grafo.adicionar_aresta(1029, 1030, 2, "3204")
+    grafo.adicionar_aresta(1030, 1031, 3, "3204")
+    grafo.adicionar_aresta(1031, 1004, 4, "3204")   
+    grafo.adicionar_aresta(1004, 1005, 3, "3204")
+    grafo.adicionar_aresta(1005, 1003, 2, "3204")
+    grafo.adicionar_aresta(1003, 1027, 5, "3204")
+    grafo.adicionar_aresta(1027, 1003, 2, "3204")
+    grafo.adicionar_aresta(1003, 1018, 1, "3204")
+    grafo.adicionar_aresta(1018, 1003, 3, "3204")
+
 
     # Entrada do usuário
     origem = int(input("Digite o ponto de partida: "))
@@ -92,4 +119,5 @@ if __name__ == "__main__":
     print("A(s) linha(s) a serem usadas é:")
     for i in range(len(rota) - 1):
         linha = linha_rota[i]
-        print(f"Linha {linha}")
+        destino = rota[i]
+        print(f"Linha {linha} no ponto {destino}")
