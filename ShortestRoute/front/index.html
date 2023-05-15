@@ -1,82 +1,113 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Como Chegar - Gama</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-        body {
-            display: flex;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .left {
-            flex: 1;
-            background-color: #F2EDDC;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .right {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container {
-            width: 400px;
-            height: 350px;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: left;
-        }
-
-        h1 {
-            margin-bottom: 30px;
-            color: #403631;
-        }
-
-        input[type="text"], select {
-            width: 100%;
-            height: 40px;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #ffffff;
-        }
-
-        button {
-            padding: 10px 20px;
-            height: 50px;
-            width: 100%;
-            margin-top: 10px;
-            background-color: #D97762;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-    </style>
+  <title>Como Chegar - Gama</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="left">
-        <img src="assets/onibus2.png" width="300" alt="Imagem">
+  <div class="left">
+    <img src="assets/onibus2.png" width="300" alt="Imagem">
+  </div>
+  <div class="right">
+    <div class="container">
+      <h1>Encontre o caminho mais curto</h1>
+      <select id="origemSelect" onchange="updateDestinoOptions()">
+        <option value="">Ponto de origem</option>
+        <!-- Opções de origem geradas dinamicamente -->
+      </select>
+      <select id="destinoSelect">
+        <option value="">Ponto de destino</option>
+        <!-- Opções de destino geradas dinamicamente -->
+      </select>
+      <button>Procurar</button>
     </div>
-    <div class="right">
-        <div class="container">
-            <h1>Encontre o caminho mais curto</h1>
-            <input type="text" placeholder="Ponto de origem">
-            <input type="text" placeholder="Ponto de destino">
-            <button>Procurar</button>
-        </div>
-    </div>
+  </div>
 </body>
+<script>
+  var pontos = [
+    "Terminal Gama Sul",
+    "Q 13",
+    "Avenida dos Pioneiros",
+    "Avenida Wagner Piau de Almeida",
+    "Avenida JK",
+    "Retorno - DF-480 (UnB)",
+    "Avenida São Francisco",
+    "Estrada de Acesso Ponte Alta Norte",
+    "Avenida Buritis",
+    "Rua das Palmeiras",
+    "Via Nucleo Rural Ponte Alta Norte",
+    "EPCT / DF-001 / BR-251",
+    "DF-480 - Intersecção",
+    "Marginal DF-480 - Retorno",
+    "Retorno - DF-480 (Qd 47 - Setor Leste))",
+    "Balão - Avenida Contorno / Via SCLN / DF - 480",
+    "Avenida Centro Leste - Via SC1 - 1",
+    "Retorno - Avenida Comercial dos Pioneiros",
+    "Interna - Terminal Gama Sul",
+    "VC - 383",
+    "Rua Santo Expedito",
+    "Núcleo Rural Ponte Alta - R. 70",
+    "Via Nucleo Rural Ponte Alta Norte",
+    "Avenida Roservarte Alves de Sousa",
+    "Balão - Avenida Roservarte Alves de Sousa",
+    "Avenida Wagner Piau de Almeida",
+    "Comércio Central",
+    "Avenida Centro Leste",
+    "Terminal Rodoviário do Gama",
+    "Terminal BRT Gama",
+    "Interna - Terminal BRT Gama",
+    "Avenida Contorno",
+    "Via SCLN",
+    "Avenida Wagner Piau de Almeida",
+    "Avenida JK",
+    "Avenida dos Pioneiros",
+    "Terminal Rodoviário do Gama",
+    "Avenida dos Pioneiros",
+    "Retorno - Avenida Comercial dos Pioneiros",
+    "Avenida dos Pioneiros"
+  ];
+
+  // Função para atualizar as opções de destino com base na origem selecionada
+  function updateDestinoOptions() {
+    var origemSelect = document.getElementById("origemSelect");
+    var destinoSelect = document.getElementById("destinoSelect");
+
+    // Limpa as opções de destino
+    destinoSelect.innerHTML = "";
+
+    // Cria as novas opções de destino
+    for (var i = 0; i < pontos.length; i++) {
+      var ponto = pontos[i];
+
+      // Verifica se o ponto de origem é diferente do ponto atual
+      if (ponto !== origemSelect.value) {
+        var option = document.createElement("option");
+        option.value = ponto;
+        option.text = ponto;
+        destinoSelect.appendChild(option);
+      }
+    }
+  }
+
+  // Função para realizar a busca do caminho mais curto
+  function procurarCaminho() {
+    var origem = document.getElementById("origemSelect").value;
+    var destino = document.getElementById("destinoSelect").value;
+
+    // Realize as ações necessárias para buscar o caminho mais curto com base na origem e destino selecionados
+    // ...
+  }
+
+  // Inicializa as opções de origem
+  for (var i = 0; i < pontos.length; i++) {
+    var ponto = pontos[i];
+    var option = document.createElement("option");
+    option.value = ponto;
+    option.text = ponto;
+    document.getElementById("origemSelect").appendChild(option);
+  }
+</script>
+
 </html>

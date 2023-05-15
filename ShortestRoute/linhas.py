@@ -1,6 +1,6 @@
 #https://horariodeonibusdf.com.br/gama
 
-grafo = {
+linhas = {
     "linha_3210": [
         ("Terminal Gama Sul", "Q 13", 3),
         ("Q 13", "Avenida dos Pioneiros", 4),

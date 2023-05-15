@@ -1,5 +1,6 @@
 import sys
 from heapq import heappop, heappush
+from linhas import linhas
 
 class Grafo:
     def __init__(self, vertices):
@@ -13,6 +14,7 @@ class Grafo:
         self.grafo[destino].append((origem, peso))
         self.linhas[(origem, destino)] = linha
         self.linhas[(destino, origem)] = linha
+
 
     def dijkstra(self, origem, destino):
         distancias = [sys.maxsize] * self.vertices
@@ -59,17 +61,24 @@ if __name__ == "__main__":
     # Criação do grafo
     num_vertices = 8
     grafo = Grafo(num_vertices)
-    #Array com os pontos
-    pontos = ["Parada UnB Gama", "Parada Faciplac", "Gama Shopping", "Hospital Maria Auxiliadora", "Setor de Industrias", "Vila Olímpica"]
 
     # Adição das arestas e seus pesos (em minutos)
-    grafo.adicionar_aresta(0, 1, 25, "A")
-    grafo.adicionar_aresta(2, 0, 25, "B")
-    grafo.adicionar_aresta(0, 4, 29, "C")
-    grafo.adicionar_aresta(2, 3, 7, "D")
-    grafo.adicionar_aresta(2, 4, 3, "E")
-    grafo.adicionar_aresta(3, 5, 4, "F")
-    grafo.adicionar_aresta(3, 6, 1, "G")
+    # grafo.adicionar_aresta(0, 1, 25, "A")
+    # grafo.adicionar_aresta(2, 0, 25, "B")
+    # grafo.adicionar_aresta(0, 4, 29, "C")
+    # grafo.adicionar_aresta(2, 3, 7, "D")
+    # grafo.adicionar_aresta(2, 4, 3, "E")
+    # grafo.adicionar_aresta(3, 5, 4, "F")
+    # grafo.adicionar_aresta(3, 6, 1, "G")
+
+
+    # Adicionar as arestas para a linha_3210
+    for i in range(len(linhas['linha_3210']) - 1):
+        origem = linhas['linha_3210'][i]
+        destino = linhas['linha_3210'][i + 1]
+        peso = linhas['linha_3210'][i + 2]
+        print(origem, destino, peso, "Linha 3210")
+        grafo.adicionar_aresta(origem, destino, peso, "Linha 3210")
 
     # Entrada do usuário
     origem = int(input("Digite o ponto de partida: "))
