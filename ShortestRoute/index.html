@@ -3,31 +3,23 @@
 <head>
 
     <title>Shortest Route</title>
-    <style>
-        /* Estilos para o título */
-      h1 {
-              font-family: Arial, sans-serif;
-              font-size: 36px;
-              color: black;
-              font-weight: bold;
-              text-transform: uppercase;
-              margin-top:100px;
-        text-align:left;
-        margin:50;
-          }
-          body {
-        width:100%;
-        height:100%;
-        background-image: url("./fundo.png");
-        background-size: 100%;
-        background-repeat: no-repeat;   
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  
+    <py-script>
+        from pyscript import Element 
 
-    }
-    </style>
+        def buscarRota():
+            print("eai mundo")
+            input_origem = Element('seletor')
+            print(input_origem.value)
+            input_origem = Element('seletor1')
+            print(input_origem.value)
+    </py-script>
 </head>
 <body>
 
-    <h1>ShortestRoute</h1>
+    <h1>ShortestRoute -  Gama-DF</h1>
         <label for="seletor">Selecione seu ponto de partida:</label>
         <select id="seletor" name="origem ">
             <option value = 1001 >Terminal Gama Sul</option>
@@ -98,7 +90,7 @@
         </select>
         <br><br>
         
-		<button id="start" onclick="start(event);">
+		<button py-click="buscarRota()"id="start" onclick="start(event);">
 			Buscar
         </button> 
         <table>
