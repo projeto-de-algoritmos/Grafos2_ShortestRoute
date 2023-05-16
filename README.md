@@ -16,7 +16,7 @@ O objetivo e achar qual linha de onibus chegará mais rápido ao destino para aj
 ##  Como Utilizar
 - Clone o repositório em seu ambiente local. <br>
 - Certifique-se de ter o Python instalado. <br>
-- Execute o aplicativo com o comando python app.py. <br>
+- Execute o aplicativo com o comando python MenorRota.py. <br>
 - Siga as instruções fornecidas na interface do aplicativo para utilizar suas funcionalidades. <br>
 
 
