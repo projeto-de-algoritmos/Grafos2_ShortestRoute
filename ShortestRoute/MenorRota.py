@@ -106,6 +106,45 @@ if __name__ == "__main__":
     grafo.adicionar_aresta(1003, 1018, 1, "3204")
     grafo.adicionar_aresta(1018, 1003, 3, "3204")
 
+    dados = {
+        1001: "Terminal Gama Sul",
+        1002: "Q 13",
+        1003: "Avenida dos Pioneiros",
+        1004: "Avenida Wagner Piau de Almeida",
+        1005: "Avenida JK",
+        1006: "Retorno - DF-480 (UnB)",
+        1007: "Avenida São Francisco",
+        1008: "Estrada de Acesso Ponte Alta Norte",
+        1009: "Avenida Buritis",
+        1010: "Rua das Palmeiras",
+        1011: "Via Nucleo Rural Ponte Alta Norte",
+        1012: "EPCT / DF-001 / BR-251",
+        1013: "DF-480 - Intersecção",
+        1014: "Marginal DF-480 - Retorno",
+        1015: "Retorno - DF-480 (Qd 47 - Setor Leste))",
+        1016: "Balão - Avenida Contorno / Via SCLN / DF - 480",
+        1017: "Avenida Centro Leste - Via SC1 - 1",
+        1018: "Retorno - Avenida Comercial dos Pioneiros",
+        1019: "Interna - Terminal Gama Sul",
+        1020: "VC - 383",
+        1021: "Rua Santo Expedito",
+        1022: "Núcleo Rural Ponte Alta - R. 70",
+        1023: "Avenida Roservarte Alves de Sousa",
+        1024: "Balão - Avenida Roservarte Alves de Sousa",
+        1025: "Comércio Central",
+        1026: "Avenida Centro Leste",
+        1027: "Terminal Rodoviário do Gama",
+        1028: "Terminal BRT Gama",
+        1029: "Interna - Terminal BRT Gama",
+        1030: "Avenida Contorno",
+        1031: "Via SCLN"
+    }
+
+    # Imprimir a tabela no terminal
+    print("Cód Referente \tPonto")
+    print("-----------------------------------")
+    for codigo, nome in dados.items():
+        print(f"{codigo}\t\t{nome}")
 
     # Entrada do usuário
     origem = int(input("Digite o ponto de partida: "))
@@ -113,6 +152,7 @@ if __name__ == "__main__":
 
     # Cálculo da rota mais rápida 
     menor_distancia, rota, linha_rota = grafo.dijkstra(origem, destino)
+
 
     # Imprimir o resultado
     print(f"A menor distância entre {origem} e {destino} é de {menor_distancia} minutos")
