@@ -11,21 +11,24 @@
 ## Sobre 
 
 O ShortestRoute é um aplicativo web que utiliza o algoritmo de Dijkstra para encontrar a rota mais rápida entre pontos de ônibus do Gama. Ele é capaz de calcular a menor distância entre um ponto de partida e um ponto de chegada. 
-O objetivo e achar qual linha de onibus chegará mais rápido ao destino.
+O objetivo e achar qual linha de onibus chegará mais rápido ao destino para ajudar os usuários a planejarem suas viagens de ônibus de forma eficiente, levando em consideração a duração da viagem.
 
-##  Como jogar
+##  Como Utilizar
+- Clone o repositório em seu ambiente local. <br>
+- Certifique-se de ter o Python instalado. <br>
+- Execute o aplicativo com o comando python app.py. <br>
+- Siga as instruções fornecidas na interface do aplicativo para utilizar suas funcionalidades. <br>
 
 
 ## Screenshots
 ![image](https://github.com/projeto-de-algoritmos/Grafos2_ShortestRoute/assets/67807684/621507df-1afd-4668-a77c-d4e901396b1f)
-![image](https://github.com/projeto-de-algoritmos/Grafos2_ShortestRoute/assets/67807684/d6eca3b9-1aed-4f47-8cee-d379b48d45f5)
+
 
 
 
 ## Instalação 
-**Linguagem**: <br>
+**Linguagem**: Python <br>
 
-## Outros 
 
 
 
