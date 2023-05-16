@@ -17,6 +17,9 @@ O objetivo e achar qual linha de onibus chegará mais rápido ao destino.
 
 
 ## Screenshots
+![image](https://github.com/projeto-de-algoritmos/Grafos2_ShortestRoute/assets/67807684/621507df-1afd-4668-a77c-d4e901396b1f)
+![image](https://github.com/projeto-de-algoritmos/Grafos2_ShortestRoute/assets/67807684/d6eca3b9-1aed-4f47-8cee-d379b48d45f5)
+
 
 
 ## Instalação 
